@@ -717,7 +717,7 @@
     "datePublished": "2020-01-14T14:31:01+08:00",
     "dateModified": "2020-01-14T14:31:01+08:00",
     "url" : "https://hby132500.github.io/php/strtotime/",
-    "description": ,
+    "description": "strtotime 日期最后一天转换问题 经常会有人被strtotime结合-1 month, +1 month, next month的时候搞得很困惑, 然后就会觉得这个函数有点不那么靠谱, 动不动就",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https://hby132500.github.io"
@@ -960,7 +960,7 @@
     <div class="single__meta">
       
 <div class="single__infos">
-  <time class="single__info" title="Written At">📅&nbsp;Jan 14, 2020 </time>  &middot; <span class="single__info" title="Reading Time"> ☕ 0 min read </span>
+  <time class="single__info" title="Written At">📅&nbsp;Jan 14, 2020 </time>  &middot; <span class="single__info" title="Reading Time"> ☕ 1 min read </span>
   <span class="single__info">
     
   </span>
@@ -971,7 +971,20 @@
     </div>    
     <article class="single__contents">
       
-      
+      <h5 id="strtotime-日期最后一天转换问题">strtotime 日期最后一天转换问题</h5>
+<p>经常会有人被strtotime结合-1 month, +1 month, next month的时候搞得很困惑, 然后就会觉得这个函数有点不那么靠谱, 动不动就出问题. 用的时候就会很慌…</p>
+<pre><code>date(&quot;Y-m-d&quot;,strtotime(&quot;-1 month&quot;))
+</code></pre><p>从PHP5.3开始呢, date新增了一系列修正短语, 来明确这个问题, 那就是”first day of” 和 “last day of”, 也就是你可以限定好不要让date自动”规范化”:</p>
+<pre><code>var_dump(date(&quot;Y-m-d&quot;, strtotime(&quot;last day of -1 month&quot;, strtotime(&quot;2017-03-31&quot;))));
+//输出2017-02-28
+var_dump(date(&quot;Y-m-d&quot;, strtotime(&quot;first day of +1 month&quot;, strtotime(&quot;2017-08-31&quot;))));
+////输出2017-09-01
+var_dump(date(&quot;Y-m-d&quot;, strtotime(&quot;first day of next month&quot;, strtotime(&quot;2017-01-31&quot;))));
+////输出2017-02-01
+var_dump(date(&quot;Y-m-d&quot;, strtotime(&quot;last day of last month&quot;, strtotime(&quot;2017-03-31&quot;))));
+////输出2017-02-28
+</code></pre><p>那如果是5.3之前的版本(还有人用么?), 你可以使用mktime之类的, 把所有的日子忽略掉, 比如都限定为每月1号就可以了, 只不过就不如直接用first day来的更加优雅.</p>
+
     </article>
     
     
@@ -1407,7 +1420,15 @@ document.addEventListener('DOMContentLoaded', function () {
     
   </div>
   <div class="toc ">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
   </div>
 </section>
 

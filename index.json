@@ -24,7 +24,7 @@
 	"categories": [],
 	"series": [],
 	"description": "",
-	"content": ""
+	"content": "strtotime 日期最后一天转换问题 经常会有人被strtotime结合-1 month, +1 month, next month的时候搞得很困惑, 然后就会觉得这个函数有点不那么靠谱, 动不动就出问题. 用的时候就会很慌…\ndate(\u0026quot;Y-m-d\u0026quot;,strtotime(\u0026quot;-1 month\u0026quot;)) 从PHP5.3开始呢, date新增了一系列修正短语, 来明确这个问题, 那就是”first day of” 和 “last day of”, 也就是你可以限定好不要让date自动”规范化”:\nvar_dump(date(\u0026quot;Y-m-d\u0026quot;, strtotime(\u0026quot;last day of -1 month\u0026quot;, strtotime(\u0026quot;2017-03-31\u0026quot;)))); //输出2017-02-28 var_dump(date(\u0026quot;Y-m-d\u0026quot;, strtotime(\u0026quot;first day of +1 month\u0026quot;, strtotime(\u0026quot;2017-08-31\u0026quot;)))); ////输出2017-09-01 var_dump(date(\u0026quot;Y-m-d\u0026quot;, strtotime(\u0026quot;first day of next month\u0026quot;, strtotime(\u0026quot;2017-01-31\u0026quot;)))); ////输出2017-02-01 var_dump(date(\u0026quot;Y-m-d\u0026quot;, strtotime(\u0026quot;last day of last month\u0026quot;, strtotime(\u0026quot;2017-03-31\u0026quot;)))); ////输出2017-02-28 那如果是5.3之前的版本(还有人用么?), 你可以使用mktime之类的, 把所有的日子忽略掉, 比如都限定为每月1号就可以了, 只不过就不如直接用first day来的更加优雅.\n"
 },
 {
 	"uri": "https://hby132500.github.io/about/",
