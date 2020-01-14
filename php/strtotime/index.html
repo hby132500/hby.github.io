@@ -717,7 +717,7 @@
     "datePublished": "2020-01-14T14:31:01+08:00",
     "dateModified": "2020-01-14T14:31:01+08:00",
     "url" : "https://hby132500.github.io/php/strtotime/",
-    "description": "strtotime 日期最后一天转换问题 经常会有人被strtotime结合-1 month, +1 month, next month的时候搞得很困惑, 然后就会觉得这个函数有点不那么靠谱, 动不动就",
+    "description": "strtotime 日期最后一天转换问题 经常会有人被 strtotime 结合 -1 month , +1 month , next month 的时候搞得很困惑, 然后就会觉得这个函数有点不那么靠谱, 动不动就出问题. 用的时候就会很",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https://hby132500.github.io"
@@ -971,19 +971,40 @@
     </div>    
     <article class="single__contents">
       
-      <h5 id="strtotime-日期最后一天转换问题">strtotime 日期最后一天转换问题</h5>
-<p>经常会有人被strtotime结合-1 month, +1 month, next month的时候搞得很困惑, 然后就会觉得这个函数有点不那么靠谱, 动不动就出问题. 用的时候就会很慌…</p>
-<pre><code>date(&quot;Y-m-d&quot;,strtotime(&quot;-1 month&quot;))
-</code></pre><p>从PHP5.3开始呢, date新增了一系列修正短语, 来明确这个问题, 那就是”first day of” 和 “last day of”, 也就是你可以限定好不要让date自动”规范化”:</p>
-<pre><code>var_dump(date(&quot;Y-m-d&quot;, strtotime(&quot;last day of -1 month&quot;, strtotime(&quot;2017-03-31&quot;))));
+      <h4 id="strtotime-日期最后一天转换问题">strtotime 日期最后一天转换问题</h4>
+<p>经常会有人被 <code>strtotime</code> 结合 <code>-1 month</code> , <code>+1 month</code> , <code>next month</code> 的时候搞得很困惑, 然后就会觉得这个函数有点不那么靠谱, 动不动就出问题. 用的时候就会很慌…</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">date(&#34;Y-m-d&#34;,strtotime(&#34;-1 month&#34;))
+</code></pre></td></tr></table>
+</div>
+</div><p>从PHP5.3开始呢, date新增了一系列修正短语, 来明确这个问题, 那就是”first day of” 和 “last day of”, 也就是你可以限定好不要让date自动”规范化”:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php">var_dump(date(&#34;Y-m-d&#34;, strtotime(&#34;last day of -1 month&#34;, strtotime(&#34;2017-03-31&#34;))));
 //输出2017-02-28
-var_dump(date(&quot;Y-m-d&quot;, strtotime(&quot;first day of +1 month&quot;, strtotime(&quot;2017-08-31&quot;))));
-////输出2017-09-01
-var_dump(date(&quot;Y-m-d&quot;, strtotime(&quot;first day of next month&quot;, strtotime(&quot;2017-01-31&quot;))));
-////输出2017-02-01
-var_dump(date(&quot;Y-m-d&quot;, strtotime(&quot;last day of last month&quot;, strtotime(&quot;2017-03-31&quot;))));
-////输出2017-02-28
-</code></pre><p>那如果是5.3之前的版本(还有人用么?), 你可以使用mktime之类的, 把所有的日子忽略掉, 比如都限定为每月1号就可以了, 只不过就不如直接用first day来的更加优雅.</p>
+var_dump(date(&#34;Y-m-d&#34;, strtotime(&#34;first day of +1 month&#34;, strtotime(&#34;2017-08-31&#34;))));
+//输出2017-09-01
+var_dump(date(&#34;Y-m-d&#34;, strtotime(&#34;first day of next month&#34;, strtotime(&#34;2017-01-31&#34;))));
+//输出2017-02-01
+var_dump(date(&#34;Y-m-d&#34;, strtotime(&#34;last day of last month&#34;, strtotime(&#34;2017-03-31&#34;))));
+//输出2017-02-28
+</code></pre></td></tr></table>
+</div>
+</div><p>那如果是5.3之前的版本(还有人用么?), 你可以使用 <code>mktime</code> 之类的, 把所有的日子忽略掉, 比如都限定为每月1号就可以了, 只不过就不如直接用 first day 来的更加优雅.</p>
 
     </article>
     

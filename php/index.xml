@@ -22,7 +22,7 @@
         <pubDate>Tue, 14 Jan 2020 14:31:01 +0800</pubDate>
         <author>624422327@qq.com (梦.不觉)</author>
         <guid>https://hby132500.github.io/php/strtotime/</guid>
-        <description>strtotime 日期最后一天转换问题 经常会有人被strtotime结合-1 month, +1 month, next month的时候搞得很困惑, 然后就会觉得这个函数有点不那么靠谱, 动不动就</description>
+        <description>strtotime 日期最后一天转换问题 经常会有人被 strtotime 结合 -1 month , +1 month , next month 的时候搞得很困惑, 然后就会觉得这个函数有点不那么靠谱, 动不动就出问题. 用的时候就会很</description>
       </item>
       
     
