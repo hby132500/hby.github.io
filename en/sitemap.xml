@@ -3,6 +3,41 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://hby132500.github.io/</loc>
+    <lastmod>2020-01-14T14:31:01+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://hby132500.github.io/zh/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="https://hby132500.github.io/ko/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://hby132500.github.io/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://hby132500.github.io/php/</loc>
+    <lastmod>2020-01-14T14:31:01+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hby132500.github.io/php/strtotime/</loc>
+    <lastmod>2020-01-14T14:31:01+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hby132500.github.io/about/</loc>
+    <lastmod>2020-01-14T14:28:06+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://hby132500.github.io/categories/</loc>
     <xhtml:link
                 rel="alternate"
@@ -18,25 +53,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://hby132500.github.io/categories/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://hby132500.github.io/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://hby132500.github.io/zh/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="https://hby132500.github.io/ko/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://hby132500.github.io/"
                 />
   </url>
   
