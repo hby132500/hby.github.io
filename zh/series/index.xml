@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Series on hby-blog</title>
+    <link>https://hby132500.github.io/zh/series/</link>
+    <description>Recent content in Series on hby-blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <managingEditor>624422327@qq.com (梦.不觉)</managingEditor>
+    <webMaster>624422327@qq.com (梦.不觉)</webMaster>
+    <copyright>©{year}, All Rights Reserved</copyright>
+    
+        <atom:link href="https://hby132500.github.io/zh/series/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+    
+  </channel>
+</rss>
